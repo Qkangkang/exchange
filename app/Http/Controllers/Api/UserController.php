@@ -50,11 +50,12 @@ class UserController extends Controller
 
     /**
      * 登录更新token
-     *
      * @param Request $request
      * @return array
      * @throws \EasyWeChat\Kernel\Exceptions\InvalidConfigException
      */
+
+
     public function login(Request $request, User $user,MinaInfo $minaInfo)
     {
         $rules = [
@@ -89,7 +90,7 @@ class UserController extends Controller
             return $this->success(200, 'ok', $userInfo);
         } catch (\Exception $e) {
             Log::error('getUserInfo:' . $e->getMessage());
-            return $this->error(400, '网络繁忙');
+            return $this->error(400, $e->getMessage());
         }
     }
 
