@@ -77,6 +77,11 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * 获取拿到用户信息
+     * @param Request $request
+     * @return array
+     */
     public function getUserInfo(Request $request)
     {
         try {
